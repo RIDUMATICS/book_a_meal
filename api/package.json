@@ -1,0 +1,9 @@
+{
+  "name": "Book_a_Meal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Book-A-Meal is an application that allows customers to make food orders and helps the food",
+  "repository": "https://github.com/RIDUMATICS/book_a_meal-ALCwithForloop-",
+  "author": "Ridwan Onikoyi"
+}
