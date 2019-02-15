@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import MealService from '../services/meal.service';
 
 const MealController = {
@@ -11,7 +12,7 @@ const MealController = {
     res.status(201).json({ status: 'success', data: createdMeal });
   },
   getSingleMeal(req, res) {
-    const { id } = req.body;
+    const { id } = req.params;
     const foundMeal = MealService.getMeal(id);
     return res.status(200).json({ status: 'success', data: foundMeal });
   },

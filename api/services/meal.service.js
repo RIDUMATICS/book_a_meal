@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import dummyData from '../utils/dummyData';
 import Meal from '../models/meal.model';
 
@@ -28,7 +29,8 @@ const MealService = {
     return newMeal;
   },
   getMeal(id) {
-    const meal = dummyData.meals.find(currentMeal => currentMeal.id === id);
+    // eslint-disable-next-line eqeqeq
+    const meal = dummyData.meals.find(currentMeal => currentMeal.id == id);
     return meal || {};
   },
 };
