@@ -33,6 +33,19 @@ const MealService = {
     const meal = dummyData.meals.find(currentMeal => currentMeal.id == id);
     return meal || {};
   },
+  // value is an Object
+  updateMeal(id, value) {
+    // eslint-disable-next-line eqeqeq
+    const mealIndex = dummyData.meals.findIndex(currentMeal => currentMeal.id == id);
+    if (mealIndex >= 0) {
+      const initialMeal = dummyData.meals[mealIndex];
+      const newMeal = { ...initialMeal, ...value };
+      dummyData.meals[mealIndex] = newMeal;
+      return { status: 200, data: newMeal };
+    }
+    return { status: 204 };
+  },
+
 };
 
 export default MealService;
