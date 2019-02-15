@@ -22,6 +22,11 @@ const MealController = {
     const updatedMeal = MealService.updateMeal(id, value);
     return res.status(updatedMeal.status).json(updatedMeal);
   },
+  dropMeal(req, res) {
+    const { id } = req.params;
+    const newMeals = MealService.dropMeal(id);
+    return res.status(newMeals.status).json(newMeals);
+  },
 };
 
 export default MealController;
