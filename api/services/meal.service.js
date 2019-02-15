@@ -45,6 +45,17 @@ const MealService = {
     }
     return { status: 204 };
   },
+  dropMeal(id) {
+    // eslint-disable-next-line eqeqeq
+    const mealIndex = dummyData.meals.findIndex(currentMeal => currentMeal.id == id);
+    if (mealIndex >= 0) {
+      // eslint-disable-next-line eqeqeq
+      const newMeals = dummyData.meals.filter(meal => meal.id != id);
+      dummyData.meals = newMeals;
+      return { status: 200, data: newMeals };
+    }
+    return { status: 204 };
+  },
 
 };
 
