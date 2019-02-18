@@ -18,7 +18,11 @@ const checkCookie = () => {
     document.querySelector('#log-in').style.display = 'none';
     document.querySelector('#log-out').style.display = 'inline-block';
     document.querySelector('#dashboard').style.display = 'inline-block';
-    username = getCookie('user');
+  } else {
+    document.querySelector('#sign-up').style.display = 'inline-block';
+    document.querySelector('#log-in').style.display = 'inline-block';
+    document.querySelector('#log-out').style.display = 'none';
+    document.querySelector('#dashboard').style.display = 'none';
   }
 };
 
