@@ -9,7 +9,6 @@ data.menu[len - 1].breakfast.forEach((meal) => {
   // eslint-disable-next-line no-undef
   document.querySelector('#breakfast').innerHTML += food(meal.name, meal.price);
   // eslint-disable-next-line no-console
-  console.log(food(meal.name, meal.price));
 });
 data.menu[len - 1].lunch.forEach((meal) => {
   // eslint-disable-next-line no-undef
