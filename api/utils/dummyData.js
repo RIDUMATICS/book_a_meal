@@ -27,10 +27,11 @@ export default {
   ],
   menu: [
     {
-      id: 0,
+      
       date: '2-17-19',
       meals: [
         {
+          id: 0,
           name: 'Spagetti',
           section: 'Breakfast',
           price: '150',
@@ -38,6 +39,7 @@ export default {
           img: '',
         },
         {
+          id: 1,
           name: 'Spagetti',
           section: 'Super',
           price: '150',
@@ -45,6 +47,7 @@ export default {
           img: '',
         },
         {
+          id: 2,
           name: 'Spagetti',
           section: 'Lunch',
           price: '150',
@@ -52,6 +55,7 @@ export default {
           img: '',
         },
         {
+          id: 3,
           name: 'Spagetti',
           section: 'Super',
           price: '150',
@@ -59,6 +63,7 @@ export default {
           img: '',
         },
         {
+          id: 4,
           name: 'Yam and Egg',
           section: 'Breakfast',
           price: '200',
@@ -67,5 +72,22 @@ export default {
         },
       ],
     },
+  ],
+  orders: [
+    {
+      orderId: 1,
+      userId: 3,
+      mealId: 4,
+      status: 'pending',
+      cost: 500,
+    },
+    {
+      orderId: 1,
+      userId: 3,
+      mealId: 2,
+      status: 'pending',
+      cost: 500,
+    },
+
   ],
 };

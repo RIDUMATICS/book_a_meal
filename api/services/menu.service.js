@@ -6,6 +6,7 @@ const MenuService = {
     const len = dummyData.menu.length;
     const validMeals = dummyData.menu[len - 1].meals.map((meal) => {
       const newMeal = new Menu();
+      newMeal.id = meal.id;
       newMeal.name = meal.name;
       newMeal.section = meal.section;
       newMeal.size = meal.size;
@@ -16,17 +17,14 @@ const MenuService = {
     return validMeals;
   },
   addMenu(menu) {
-    const menuLength = dummyData.menu.length;
-    const lastId = dummyData.menu[menuLength - 1].id;
-    const newId = lastId + 1;
     // eslint-disable-next-line no-param-reassign
     const newMenu = {};
-    newMenu.id = newId;
     newMenu.meals = [];
 
     // eslint-disable-next-line array-callback-return
-    menu.map((meal) => {
+    menu.map((meal, index) => {
       const newMeal = new Menu();
+      newMeal.id = index;
       newMeal.name = meal.name;
       newMeal.section = meal.section;
       newMeal.size = meal.size;
