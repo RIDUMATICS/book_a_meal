@@ -13,6 +13,7 @@ const getCookie = () => document.cookie.split(';').map((value) => {
     document.querySelector('#sign-up').style.display = 'none';
     document.querySelector('#log-in').style.display = 'none';
     document.querySelector('#log-out').style.display = 'inline-block';
+    document.querySelector('#dashboard').style.display = 'inline-block';
   }
 });
 
