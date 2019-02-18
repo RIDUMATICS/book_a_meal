@@ -7,17 +7,25 @@ const notify = document.querySelector('#notify');
 let username = 'No User';
 
 // eslint-disable-next-line array-callback-return
-const getCookie = () => document.cookie.split(';').map((value) => {
-  if (value.indexOf('user=') === 1) {
-    username = value.substring(value.indexOf('=') + 1);
+const getCookie = (name) => {
+  const re = new RegExp(`${name}=([^;]+)`);
+  const value = re.exec(document.cookie);
+  return (value != null) ? unescape(value[1]) : null;
+};
+
+const checkCookie = () => {
+  if (getCookie('user')) {
     document.querySelector('#sign-up').style.display = 'none';
     document.querySelector('#log-in').style.display = 'none';
     document.querySelector('#log-out').style.display = 'inline-block';
     document.querySelector('#dashboard').style.display = 'inline-block';
+    username = getCookie('user');
   }
-});
+};
 
-getCookie('user');
+console.log(getCookie('user'));
+
+checkCookie();
 
 
 const data = JSON.parse(localStorage.getItem('iyapato-data'));
@@ -47,10 +55,10 @@ document.querySelector('form[name=login]').addEventListener('submit', (e) => {
 
   if (user.length === 1) {
     if (user[0].password === password) {
-      document.cookie = `user=${user[0].username}`;
+      document.cookie = `user=${user.username}`;
       logForm.style.display = 'none';
-      getCookie('user');
-      document.querySelector('#username').innerText = username;
+      checkCookie();
+      document.querySelector('#username').innerText = getCookie('user');
     } else {
       logForm.style.display = 'none';
       notify.style.display = 'inline-block';
@@ -93,4 +101,4 @@ document.querySelector('#log-out').addEventListener('click', () => {
 });
 
 
-document.querySelector('#username').innerText = username;
+document.querySelector('#username').innerText = getCookie('user') || 'No User';
