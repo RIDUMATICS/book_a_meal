@@ -1,6 +1,6 @@
 Book-a-Meal
 
-Web App bulit to connect Users for food ordeing to Caterers
+Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat.
 
 <br/><br/>#INSTALLATION INSTRUCTIONS
 
