@@ -1,10 +1,9 @@
+/* eslint-disable no-console */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-undef */
 const logForm = document.querySelector('#login');
 const signupForm = document.querySelector('#signup');
 const notify = document.querySelector('#notify');
-
-let username = 'No User';
 
 // eslint-disable-next-line array-callback-return
 const getCookie = (name) => {
