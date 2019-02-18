@@ -19,7 +19,7 @@ const getCookie = () => document.cookie.split(';').map((value) => {
 getCookie('user');
 
 
-data = JSON.parse(localStorage.getItem('iyapato-data'));
+const data = JSON.parse(localStorage.getItem('iyapato-data'));
 
 
 document.querySelector('#sign-up').addEventListener('click', () => {
