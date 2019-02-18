@@ -27,8 +27,6 @@ export default {
   ],
   menu: [
     {
-      
-      date: '2-17-19',
       meals: [
         {
           id: 0,
@@ -75,18 +73,18 @@ export default {
   ],
   orders: [
     {
-      orderId: 1,
+      id: 0,
       userId: 3,
       mealId: 4,
       status: 'pending',
-      cost: 500,
+      price: 500,
     },
     {
-      orderId: 1,
+      id: 1,
       userId: 3,
       mealId: 2,
       status: 'pending',
-      cost: 500,
+      price: 500,
     },
 
   ],
