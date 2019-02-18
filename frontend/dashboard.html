@@ -124,36 +124,6 @@
             </div>
     
   </div>
-  <script src="./js/loadData.js"></script>
-  <script type="text/babel">
-    let xhr = new XMLHttpRequest();
-
-    document.addEventListener('DOMContentLoaded', ()=>{
-      document.querySelector('.link-2').addEventListener('click', ()=>{
-      xhr.onreadystatechange = () => {
-        if(xhr.readyState === 4){
-        document.querySelector('.vr-side > div').innerHTML = xhr.responseText;
-        }
-      }
-      xhr.open('GET','my-orders.html');
-      xhr.send()
-    })
-
-    document.querySelector('.link-4').addEventListener('click', ()=>{
-      xhr.onreadystatechange = () => {
-        if(xhr.readyState === 4){
-        document.querySelector('.vr-side > div').innerHTML = xhr.responseText;
-        }
-      }
-      xhr.open('GET','orders-history.html');
-      xhr.send()
-    })
-    })
-
-    
-    
-
-    
-  </script>
+  <script type="text/babel" src="./js/loadData.js"></script>
 </body>
 </html>
