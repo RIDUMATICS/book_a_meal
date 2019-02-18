@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Leckerli+One|Open+Sans:400,700|Roboto+Slab');
+
+/*----------------------------- reset ----------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html body header {
+  width: 100%;
+} 
+
+body{
+  background-image: url('../images/body-pattern.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/* ----------------------------- header -----------------------------*/
+.user{
+  display: inline-block;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: rgba(255,255,255,0.6);
+  padding: 20px;
+  font-family: 'Roboto Slab', serif;
+
+}
+
+.user div{
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.user p{
+  display: inline-block;
+}
+
+.badge-parent{
+  position: relative;
+}
+
+.badge{
+  position: absolute;
+  background-color: #e8500e;
+  font-size: 12px;
+  color: #fff;
+  line-height: 15px;
+  text-align: center;
+  display: block;
+  top: -7px;
+  right: -20px;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+  
+}
+
+header{
+  background-image: linear-gradient(0deg,rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images//bg-header.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 550px ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-content {
+  text-align: center;
+}
+
+.logo{
+  font-family: 'Leckerli One', cursive;
+  font-size: 3.2em;
+  color: #ffffff;
+  padding: 10px;
+
+}
+.logo span {
+  color: #e8500e;
+}
+
+.header-content p{
+  font-family: 'Roboto Slab', serif;
+  font-size: 25px;
+  color: #ffffff;
+  margin: 0 0 40px;
+  font-weight: 400;
+}
+
+.btn {
+    background-color: #e8500e;
+    height: 55px;
+    line-height: 55px;
+    border: none;
+    display: inline-block;
+    padding: 0 80px 0 50px;
+    border-radius: 3px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 10px;
+}
+
+.btn-box {
+  margin: 40px 0 50px;
+}
+
+
+.btn.btn-white{
+  background-color: #ffffff;
+  color: #e8500e;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content form input{
+    font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
