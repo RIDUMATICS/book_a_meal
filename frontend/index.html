@@ -1,1 +1,67 @@
-<h1>hello world</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IYA PATO</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="user"> 
+        <div><i class="fas fa-user-slash"></i> <p id="username"></p>
+          <div class="badge-parent"><i class="fas fa-shopping-cart"></i><span class="badge badge-warning">2</span></div></div>
+          <div class="badge-parent"><i class="far fa-heart"></i><span class="badge badge-warning">0</span></div></div>
+        </div> 
+        
+      <header>
+        <div class="header-content">
+          <h1 class="logo"><a><span>IYA</span> PATO</a></h1>
+          <p>Order Delivery & Take-Out</p>
+          <div class="btn-box">
+            <div class="btn btn-white" id="sign-up">Sign Up</div>
+            <div class="btn btn-orange" id="log-in">Log In</div>
+            <div class="btn btn-orange" id="log-out" style="display:none;">Log Out</div>
+    
+          </div>
+          <img class="steps" src="./images/steps.png" alt="Easy 3 steps choose location, Order food, and Delivery or Take-Out"/>
+        </div>
+        <div id="signup" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form method="POST" name="signup">
+                    <input type="text" name="username" placeholder="username">  
+                    <input type="email" name="email" placeholder="email"/>
+                    <input type="password" name="password" placeholder="password">
+                    <button class="btn" type="submit"> CREATE ACCOUNT</button>
+                </form>
+            </div>
+          </div>
+          <div id="notify" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="msg"></p>
+            </div>
+          </div>
+          <div id="login" class="modal">
+    
+              <!-- Modal content -->
+              <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <form action="" method="POST" name="login">
+                      <input type="text" name="username" placeholder="username">
+                      <input type="password" name="password" placeholder="password">
+                      <button class="btn" type="submit">LOGIN </button>
+    
+                  </form>
+              </div>
+            
+            </div>
+      </header>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+  <script type="text/babel" src="/frontend/js/index.js"></script>
+</body>
+</html>
