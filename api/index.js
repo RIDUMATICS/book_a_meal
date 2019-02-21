@@ -17,6 +17,6 @@ app.use('/api/v1/meals', mealRouter);
 app.use('/api/v1/menu', menuRouter);
 app.use('/api/v1/orders', orderRouter);
 
-app.listen(PORT, () => {
+module.exports = app.listen(PORT, () => {
   console.log(`server is running on PORT ${PORT}`);
 });
