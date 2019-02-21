@@ -20,7 +20,7 @@ const MealController = {
   updateMeal(req, res) {
     const { id } = req.params;
     const value = req.body;
-    const updatedMeal = MealService.updatedMeal(id, value);
+    const updatedMeal = MealService.updateMeal(id, value);
     return res.status(updatedMeal.status).json(updatedMeal);
   },
   dropMeal(req, res) {

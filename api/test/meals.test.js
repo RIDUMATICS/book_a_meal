@@ -61,6 +61,7 @@ describe('Meals', () => {
           res.body.data.name.should.be.a('string');
           res.body.data.size.should.be.a('string');
           res.body.data.price.should.be.a('string');
+          res.body.data.id.should.equal(1);
           done();
         });
     });
@@ -100,6 +101,46 @@ describe('Meals', () => {
           res.body.data.name.should.be.a('string');
           res.body.data.size.should.be.a('string');
           res.body.data.price.should.be.a('string');
+          done();
+        });
+    });
+  });
+
+  describe('PUT /api/v1/meals/:id', () => {
+    it('should edit an item on put', (done) => {
+      const id = 1;
+      chai.request(app)
+        .put(`/api/v1/meals/${id}`)
+        .send({ name: 'Indomie' })
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('data');
+          res.body.status.should.be.a('number');
+          res.body.status.should.equal(200);
+          res.body.data.should.be.a('object');
+          res.body.data.should.have.property('id');
+          res.body.data.should.have.property('name');
+          res.body.data.should.have.property('size');
+          res.body.data.should.have.property('price');
+          res.body.data.id.should.be.a('number');
+          res.body.data.name.should.be.a('string');
+          res.body.data.size.should.be.a('string');
+          res.body.data.price.should.be.a('string');
+          res.body.data.id.should.equal(1);
+          res.body.data.name.should.equal('Indomie');
+          done();
+        });
+    });
+
+    it('should not edit an item with invalid id', (done) => {
+      const id = 1000; // no meal with id 1000
+      chai.request(app)
+        .put(`/api/v1/meals/${id}`)
+        .send({ name: 'Pap' })
+        .end((err, res) => {
+          res.should.have.status(204);
           done();
         });
     });
