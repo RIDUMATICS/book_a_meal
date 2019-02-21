@@ -78,4 +78,30 @@ describe('Meals', () => {
         });
     });
   });
+  // Test to post a meal
+  describe('POST /api/v1/meals', () => {
+    it('should add an meal on post', (done) => {
+      chai.request(app)
+        .post('/api/v1/meals')
+        .send({ name: 'Garri', size: 'Large', price: '200' })
+        .end((err, res) => {
+          res.should.have.status(201);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('data');
+          res.body.status.should.be.a('string');
+          res.body.status.should.equal('success');
+          res.body.data.should.be.a('object');
+          res.body.data.should.have.property('id');
+          res.body.data.should.have.property('name');
+          res.body.data.should.have.property('size');
+          res.body.data.should.have.property('price');
+          res.body.data.id.should.be.a('number');
+          res.body.data.name.should.be.a('string');
+          res.body.data.size.should.be.a('string');
+          res.body.data.price.should.be.a('string');
+          done();
+        });
+    });
+  });
 });
