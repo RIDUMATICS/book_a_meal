@@ -31,7 +31,7 @@ const MealService = {
   getMeal(id) {
     // eslint-disable-next-line eqeqeq
     const meal = dummyData.meals.find(currentMeal => currentMeal.id == id);
-    return meal || {};
+    return meal || { status: 'Not Found' };
   },
   // value is an Object
   updateMeal(id, value) {

@@ -14,6 +14,7 @@ const MealController = {
   getSingleMeal(req, res) {
     const { id } = req.params;
     const foundMeal = MealService.getMeal(id);
+    if (foundMeal.status) { return res.status(404).json({ status: foundMeal.status }); }
     return res.status(200).json({ status: 'success', data: foundMeal });
   },
   updateMeal(req, res) {

@@ -64,5 +64,18 @@ describe('Meals', () => {
           done();
         });
     });
+    // no meal data with id 1000
+    it('should not get a single meal record for invalid id', (done) => {
+      const id = 1000;
+      chai.request(app)
+        .get(`/api/v1/meals/${id}`)
+        .end((err, res) => {
+          res.should.have.status(404);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.status.should.equal('Not Found');
+          done();
+        });
+    });
   });
 });
