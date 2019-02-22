@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => res.send('The API is working'));
 
 app.use('/api/v1/meals', mealRouter);
-app.use('/api/v1/menu', menuRouter);
+app.use('/api/v1/menus', menuRouter);
 app.use('/api/v1/orders', orderRouter);
 
 module.exports = app.listen(PORT, () => {
