@@ -13,6 +13,31 @@ const MenuService = {
     });
     return validMenus;
   },
+  fetchSingleMenu(section, date) {
+    switch (section) {
+      case 'all': {
+        const validMenus = dummyData.menus.filter(menu => menu.date === date);
+        return validMenus.map((menu) => {
+          const newMenu = new Menu();
+          newMenu.id = menu.id;
+          newMenu.mealId = menu.mealId;
+          newMenu.date = menu.date;
+          newMenu.section = menu.section;
+          return newMenu;
+        });
+      }
+      case 'breakfast':
+      case 'lunch':
+      case 'dinner': {
+        const validMenus = dummyData.menus
+          .filter(menu => menu.date === date)
+          .filter(menu => menu.section === section);
+        return validMenus;
+      }
+      default:
+        return null;
+    }
+  },
   addMenu(menu) {
     const nextId = dummyData.menus.length + 1;
     const newMenu = new Menu();
