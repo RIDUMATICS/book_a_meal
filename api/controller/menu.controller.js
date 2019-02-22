@@ -6,8 +6,8 @@ const MenuController = {
     return res.status(200).json({ status: 'success', menu });
   },
   AddNewMenu(req, res) {
-    const meals = req.body;
-    const menu = MenuService.addMenu(meals);
+    const newMenu = req.body;
+    const menu = MenuService.addMenu(newMenu);
     return res.status(200).json({ status: 'success', menu });
   },
 };

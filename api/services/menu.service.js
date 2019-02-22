@@ -3,36 +3,24 @@ import Menu from '../models/menu.model';
 
 const MenuService = {
   fetchMenu() {
-    const len = dummyData.menu.length;
-    const validMeals = dummyData.menu[len - 1].meals.map((meal) => {
-      const newMeal = new Menu();
-      newMeal.id = meal.id;
-      newMeal.name = meal.name;
-      newMeal.section = meal.section;
-      newMeal.size = meal.size;
-      newMeal.price = meal.price;
-      newMeal.img = meal.img;
-      return newMeal;
+    const validMenus = dummyData.menus.map((menu) => {
+      const newMenu = new Menu();
+      newMenu.id = menu.id;
+      newMenu.mealId = menu.mealId;
+      newMenu.date = menu.date;
+      newMenu.section = menu.section;
+      return newMenu;
     });
-    return validMeals;
+    return validMenus;
   },
   addMenu(menu) {
-    // eslint-disable-next-line no-param-reassign
-    const newMenu = {};
-    newMenu.meals = [];
-
-    // eslint-disable-next-line array-callback-return
-    menu.map((meal, index) => {
-      const newMeal = new Menu();
-      newMeal.id = index;
-      newMeal.name = meal.name;
-      newMeal.section = meal.section;
-      newMeal.size = meal.size;
-      newMeal.price = meal.price;
-      newMeal.img = meal.img;
-      newMenu.meals.push(newMeal);
-    });
-    dummyData.menu.push(newMenu);
+    const nextId = dummyData.menus.length + 1;
+    const newMenu = new Menu();
+    newMenu.id = nextId;
+    newMenu.mealId = menu.mealId;
+    newMenu.date = menu.date;
+    newMenu.section = menu.section;
+    dummyData.menus.push(newMenu);
     return newMenu;
   },
 
