@@ -8,8 +8,9 @@ const OrderService = {
       const newOrder = new Orders();
       newOrder.id = order.id;
       newOrder.userId = order.userId;
-      newOrder.mealId = order.mealId;
+      newOrder.menuId = order.menuId;
       newOrder.status = order.status;
+      newOrder.quantity = order.quantity;
       newOrder.price = order.price;
       return newOrder;
     });
@@ -21,7 +22,7 @@ const OrderService = {
     if (orderIndex >= 0) {
       const initialOrder = dummyData.orders[orderIndex];
       const newOrder = { ...initialOrder, ...value };
-      dummyData.orders[initialOrder] = newOrder;
+      dummyData.orders[orderIndex] = newOrder;
       return { status: 200, data: newOrder };
     }
     return { status: 204 };
@@ -35,8 +36,9 @@ const OrderService = {
     const newOrder = new Orders();
     newOrder.id = order.id;
     newOrder.userId = order.userId;
-    newOrder.mealId = order.mealId;
+    newOrder.menuId = order.menuId;
     newOrder.status = order.status;
+    newOrder.quantity = order.quantity;
     newOrder.price = order.price;
     dummyData.orders.push(newOrder);
     return newOrder;
