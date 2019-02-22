@@ -40,4 +40,36 @@ describe('Orders', () => {
         });
     });
   });
+
+  describe('POST /api/v1/orders', () => {
+    it('should add a single order on post', (done) => {
+      const order = {
+        userId: 4,
+        menuId: 4,
+        status: 'pending',
+        quantity: 4,
+        price: 4000,
+      };
+
+      chai.request(app)
+        .post('/api/v1/orders')
+        .send(order)
+        .end((err, res) => {
+          res.should.have.status(201);
+          res.should.be.json;
+          res.body.should.be.a('object');
+          res.body.should.have.property('status').eql('success');
+          res.body.should.have.property('data');
+          res.body.status.should.be.a('string');
+          res.body.data.should.be.a('object');
+          res.body.data.should.have.property('id');
+          res.body.data.should.have.property('userId').eql(order.userId);
+          res.body.data.should.have.property('menuId').eql(order.menuId);
+          res.body.data.should.have.property('status').eql(order.status);
+          res.body.data.should.have.property('quantity').eql(order.quantity);
+          res.body.data.should.have.property('price').eql(order.price);
+          done();
+        });
+    });
+  });
 });
