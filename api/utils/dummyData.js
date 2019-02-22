@@ -59,15 +59,17 @@ export default {
     {
       id: 0,
       userId: 3,
-      mealId: 4,
+      menuId: 4,
       status: 'pending',
-      price: 500,
+      quantity: 2,
+      price: 3000,
     },
     {
       id: 1,
       userId: 3,
-      mealId: 2,
-      status: 'pending',
+      menuId: 2,
+      status: 'received',
+      quantity: 1,
       price: 500,
     },
 
