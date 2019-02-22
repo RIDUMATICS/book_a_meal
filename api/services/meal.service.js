@@ -7,6 +7,7 @@ const MealService = {
     const validMeal = dummyData.meals.map((meal) => {
       const newMeal = new Meal();
       newMeal.id = meal.id;
+      newMeal.img = meal.img;
       newMeal.name = meal.name;
       newMeal.size = meal.size;
       newMeal.price = meal.price;
@@ -22,6 +23,7 @@ const MealService = {
     meal.id = newId;
     const newMeal = new Meal();
     newMeal.id = meal.id;
+    newMeal.img = meal.img;
     newMeal.name = meal.name;
     newMeal.size = meal.size;
     newMeal.price = meal.price;
