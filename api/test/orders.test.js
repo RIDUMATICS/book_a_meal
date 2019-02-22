@@ -72,4 +72,48 @@ describe('Orders', () => {
         });
     });
   });
+
+  describe('PUT /api/v1/orders/:id', () => {
+    it('should edit a single order on put', (done) => {
+      const id = 1;
+      const data = { status: 'pending', quantity: 5 };
+      chai.request(app)
+        .put(`/api/v1/orders/${id}`)
+        .send(data)
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.should.be.json;
+          res.body.should.be.a('object');
+          res.body.should.have.property('status').eql(200);
+          res.body.should.have.property('data');
+          res.body.status.should.be.a('number');
+          res.body.data.should.be.a('object');
+          res.body.data.should.have.property('id').eql(1);
+          res.body.data.should.have.property('userId');
+          res.body.data.should.have.property('menuId');
+          res.body.data.should.have.property('status').eql('pending');
+          res.body.data.should.have.property('quantity').eql(5);
+          res.body.data.should.have.property('price');
+          res.body.data.id.should.be.a('number');
+          res.body.data.userId.should.be.a('number');
+          res.body.data.menuId.should.be.a('number');
+          res.body.data.status.should.be.a('string');
+          res.body.data.quantity.should.be.a('number');
+          res.body.data.price.should.be.a('number');
+          done();
+        });
+    });
+
+    it('should not edit a order with invalid id', (done) => {
+      const id = 1000; // no order with id 1000
+      const data = { status: 'pending', quantity: 5 };
+      chai.request(app)
+        .put(`/api/v1/orders/${id}`)
+        .send(data)
+        .end((err, res) => {
+          res.should.have.status(204);
+          done();
+        });
+    });
+  });
 });
