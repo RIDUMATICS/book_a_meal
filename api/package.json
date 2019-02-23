@@ -12,7 +12,7 @@
     "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
     "coveralls-coverage": "coveralls < lcov.info",
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
-    "coverage": "nyc yarn test && yanr run generate-lcov && yarn run coveralls-coverage && yarn run codeclimate-coverage"
+    "coverage": "nyc yarn test && yarn run generate-lcov && yarn run coveralls-coverage && yarn run codeclimate-coverage"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
