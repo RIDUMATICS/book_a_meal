@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.com/RIDUMATICS/book_a_meal.svg?branch=develop)](https://travis-ci.com/RIDUMATICS/book_a_meal)
 
+[![Coverage Status](https://coveralls.io/repos/github/RIDUMATICS/book_a_meal/badge.svg?branch=develop)](https://coveralls.io/github/RIDUMATICS/book_a_meal?branch=develop)
+
 Book-a-Meal
 
 Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat.
