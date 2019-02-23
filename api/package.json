@@ -9,7 +9,9 @@
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
     "test": "nyc --reporter=html --reporter=text mocha --require @babel/register test/*.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls coverage": "nyc report --reporter=text-lcov | coveralls",
+    "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
+    "coverage": "nyc yarn run codeclimate-coverage && yarn run coveralls coverage "
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -25,6 +27,7 @@
     "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
+    "codeclimate-test-reporter": "^0.5.1",
     "coveralls": "^3.0.3",
     "eslint": "^5.13.0",
     "eslint-config-airbnb-base": "^13.1.0",

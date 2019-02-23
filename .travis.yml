@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - "stable"
+env:
+  global:
+  - CODECLIMATE_REPO_TOKEN=dc0ee1e022fd0bcc97f9500849e45a41d5034af63ccabb5ee3120e1e767c720a
 cache:
   directories:
     - "node_modules"
@@ -10,4 +13,4 @@ install:
 script:
   - yarn run test
 after_success: 
-   npm run coverage
+   yarn run coverage
