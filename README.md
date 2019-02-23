@@ -2,6 +2,10 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/RIDUMATICS/book_a_meal/badge.svg?branch=develop)](https://coveralls.io/github/RIDUMATICS/book_a_meal?branch=develop)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/8a45c91f27cb5905b15a/maintainability)](https://codeclimate.com/github/RIDUMATICS/book_a_meal/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/8a45c91f27cb5905b15a/test_coverage)](https://codeclimate.com/github/RIDUMATICS/book_a_meal/test_coverage)
+
 Book-a-Meal
 
 Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat.
