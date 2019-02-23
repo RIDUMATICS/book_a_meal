@@ -8,8 +8,7 @@
   "author": "Ridwan Onikoyi",
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
-    "test": "nyc --require mocha @babel/register test/*.js --exit -w",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "test": "mocha --require @babel/register test/*.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
