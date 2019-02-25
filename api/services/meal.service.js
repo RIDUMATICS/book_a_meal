@@ -7,6 +7,7 @@ const MealService = {
     const validMeal = dummyData.meals.map((meal) => {
       const newMeal = new Meal();
       newMeal.id = meal.id;
+      newMeal.img = meal.img;
       newMeal.name = meal.name;
       newMeal.size = meal.size;
       newMeal.price = meal.price;
@@ -22,6 +23,7 @@ const MealService = {
     meal.id = newId;
     const newMeal = new Meal();
     newMeal.id = meal.id;
+    newMeal.img = meal.img;
     newMeal.name = meal.name;
     newMeal.size = meal.size;
     newMeal.price = meal.price;
@@ -31,7 +33,7 @@ const MealService = {
   getMeal(id) {
     // eslint-disable-next-line eqeqeq
     const meal = dummyData.meals.find(currentMeal => currentMeal.id == id);
-    return meal || {};
+    return meal || { status: 'Not Found' };
   },
   // value is an Object
   updateMeal(id, value) {
@@ -49,10 +51,11 @@ const MealService = {
     // eslint-disable-next-line eqeqeq
     const mealIndex = dummyData.meals.findIndex(currentMeal => currentMeal.id == id);
     if (mealIndex >= 0) {
+      const delMeal = dummyData.meals[mealIndex];
       // eslint-disable-next-line eqeqeq
       const newMeals = dummyData.meals.filter(meal => meal.id != id);
       dummyData.meals = newMeals;
-      return { status: 200, data: newMeals };
+      return { status: 200, data: delMeal };
     }
     return { status: 204 };
   },

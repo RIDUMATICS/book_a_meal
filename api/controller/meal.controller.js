@@ -14,12 +14,13 @@ const MealController = {
   getSingleMeal(req, res) {
     const { id } = req.params;
     const foundMeal = MealService.getMeal(id);
+    if (foundMeal.status) { return res.status(404).json({ status: foundMeal.status }); }
     return res.status(200).json({ status: 'success', data: foundMeal });
   },
   updateMeal(req, res) {
     const { id } = req.params;
     const value = req.body;
-    const updatedMeal = MealService.updatedMeal(id, value);
+    const updatedMeal = MealService.updateMeal(id, value);
     return res.status(updatedMeal.status).json(updatedMeal);
   },
   dropMeal(req, res) {

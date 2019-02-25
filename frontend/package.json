@@ -5,7 +5,9 @@
   "author": "Ridwan Onikoyi",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js"
+    "build-babel": "babel ./js --out-dir build/",
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && npm run build-babel"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
