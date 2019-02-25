@@ -23,28 +23,7 @@ document.querySelectorAll('.close').forEach(function (close) {
 });
 document.querySelector('form[name=login]').addEventListener('submit', function (e) {
   e.preventDefault();
-  var email = e.target[0].value.toLowerCase();
-  var password = e.target[1].value;
-  var user = data.users.filter(function (currentUser) {
-    return currentUser.email === email;
-  });
-
-  if (user.length === 1) {
-    if (user[0].password === password) {
-      document.cookie = "user=".concat(user.username);
-      logForm.style.display = 'none';
-      checkCookie();
-      document.querySelector('#username').innerText = getCookie('user');
-    } else {
-      logForm.style.display = 'none';
-      notify.style.display = 'inline-block';
-      notify.querySelector('#msg').innerText = 'Incorrect Password';
-    }
-  } else {
-    logForm.style.display = 'none';
-    notify.style.display = 'inline-block';
-    notify.querySelector('#msg').innerText = 'User not register SignUp to LogIn';
-  }
+  window.location.href = './dashboard.html';
 });
 document.querySelector('form[name=signup]').addEventListener('submit', function (e) {
   e.preventDefault();
