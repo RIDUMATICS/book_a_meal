@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/user.styles.css">
+  <title>IYA PATO 🥗🍴</title>
+  <style>
+    .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.input-row {
+    display: flex;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.input-row input {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    height: calc(2rem + 1px);
+    border-radius: 4px;
+    outline: 0;
+}
+
+.tab-header {
+    color: #323232;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+  </style>
+</head>
+
+<body>
+  <div class="left-menu">
+    <h2 class="logo"><a href="./index.html">IYA PATO</a></h2>
+    <ul class="vr-nav">
+      <li class="btn btn-white"><a href="./dashboard.html">Today's Menu</a></li>
+      <li class="btn btn-white"><a href="./orders.html">Cart</a></li>
+      <li class="btn btn-white"><a href="./checkout.html">Checkout</a></li>
+      <li class="btn btn-white"><a href="./confirm.html">Confirm</a></li>
+      <li class="btn btn-white"><a href="./index.html">LogOut</a></li>
+    </ul>
+  </div>
+  <div class="vr-side">
+    <div class="food-menu" style="padding: 30px;">
+        <div id="confirmation" class="tabcontent" style="display: block;">
+            <h3 class="tab-header">Confirmation</h3>
+            <h4>Billing Info: NP1234WEE </h4>
+            <h4>Cart Info: </h4>
+            <h4>Shipping Details:</h4>
+          </div>
+    </div>
+    <a class="btn btn-orange" href="./checkout.html">BACK TO CHECKOUT</a>
+    <a class="btn btn-orange" href="./dashboard.html">CONFIRM</a>
+  </div>
+    <script src=""></script>
+</body>
+
+</html>
