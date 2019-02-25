@@ -19,7 +19,7 @@ Application was deployed to Heroku. Use public URL [http://iya-pato.herokuapp.co
 
 ## Trello
 
-Pivotal Tracker Stories can found here [Pivotal tracker](https://trello.com/b/cxO2xaT3/book-a-meal).
+Trello Stories can found here [Trello](https://trello.com/b/cxO2xaT3/book-a-meal).
 
 ---
 
