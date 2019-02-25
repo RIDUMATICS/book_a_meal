@@ -76,11 +76,20 @@ Trello Stories can found here [Trello](https://trello.com/b/cxO2xaT3/book-a-meal
 | POST   | Setup the menu for the day              | `/api/v1/menus`                     |
 | GET    | Get the menu for the day                | `/api/v1/menus`                     |
 | GET    | Get the menu for specific date          | `/api/v1/menus/:section?date=value` |
-| POST   | Select the meal option from the menu    | `/api/v1/orders`                    |
+| POST   | Add a single Order to record.           | `/api/v1/orders`                    |
 | PUT    | Modify an order                         | `/api/v1/orders/:id`                |
 | GET    | Get all the orders                      | `/api/v1/orders`                    |
 
-## Tests
+Section = all | breakfast | lunch | dinner
+Date format = m-dd-yyyy
+
+Example:
+Get all menus for 2-22-2019
+iya-pato.herokuapp.com/api/v1/menus/all?date=2-22-2019
+
+Get breakfast menus for 2-22-2019
+iya-pato.herokuapp.com/api/v1/menus/breakfast?date=2-22-2019
+
 
 - Run test for all endpoints
   > run the command below
