@@ -269,6 +269,28 @@ box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.47);
 }
 
 
+.our-story{
+  width: 75%;
+  margin: 30px auto 35px;
+}
+
+.our-story h1{
+  text-align: center;
+  padding: 20px;
+  font-family: 'Leckerli One', cursive;
+  font-size: 3.2em;
+}
+
+.story-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
 footer{
   width: 100%;
   background: #e8500e;
