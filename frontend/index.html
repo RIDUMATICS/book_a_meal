@@ -31,9 +31,9 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <form method="POST" name="signup">
-                    <input type="text" name="username" placeholder="username">  
-                    <input type="email" name="email" placeholder="email"/>
-                    <input type="password" name="password" placeholder="password">
+                    <input type="text" name="username" placeholder="username" required />  
+                    <input type="email" name="email" placeholder="email" required/>
+                    <input type="password" name="password" placeholder="password" required />
                     <button class="btn" type="submit"> CREATE ACCOUNT</button>
                 </form>
             </div>
@@ -51,8 +51,8 @@
               <div class="modal-content">
                   <span class="close">&times;</span>
                   <form action="" method="POST" name="login">
-                      <input type="text" name="username" placeholder="username">
-                      <input type="password" name="password" placeholder="password">
+                      <input type="email" name="username" placeholder="email" required />
+                      <input type="password" name="password" placeholder="password" required />
                       <button class="btn" type="submit">LOGIN </button>
     
                   </form>

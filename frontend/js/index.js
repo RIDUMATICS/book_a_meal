@@ -24,26 +24,7 @@ document.querySelectorAll('.close').forEach((close) => {
 
 document.querySelector('form[name=login]').addEventListener('submit', (e) => {
   e.preventDefault();
-  const email = e.target[0].value.toLowerCase();
-  const password = e.target[1].value;
-  const user = data.users.filter(currentUser => currentUser.email === email);
-
-  if (user.length === 1) {
-    if (user[0].password === password) {
-      document.cookie = `user=${user.username}`;
-      logForm.style.display = 'none';
-      checkCookie();
-      document.querySelector('#username').innerText = getCookie('user');
-    } else {
-      logForm.style.display = 'none';
-      notify.style.display = 'inline-block';
-      notify.querySelector('#msg').innerText = 'Incorrect Password';
-    }
-  } else {
-    logForm.style.display = 'none';
-    notify.style.display = 'inline-block';
-    notify.querySelector('#msg').innerText = 'User not register SignUp to LogIn';
-  }
+  window.location.href = './dashboard.html';
 });
 
 document.querySelector('form[name=signup]').addEventListener('submit', (e) => {
