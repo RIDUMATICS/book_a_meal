@@ -17,10 +17,6 @@ UI Template for the application can be found here [Github pages](https://ridumat
 
 Application was deployed to Heroku. Use public URL [http://iya-pato.herokuapp.com/](http://iya-pato.herokuapp.com/) with API endpoints.
 
-## Documentation
-
-[POSTMAN Documentation](https://documenter.getpostman.com/view/6765162/S11GTLzb#d2e10069-a3c9-4d5f-b7a6-bc283bbd07bd)
-
 ## Trello
 
 Trello Stories can found here [Trello](https://trello.com/b/cxO2xaT3/book-a-meal).
@@ -80,18 +76,20 @@ Trello Stories can found here [Trello](https://trello.com/b/cxO2xaT3/book-a-meal
 | POST   | Setup the menu for the day              | `/api/v1/menus`                     |
 | GET    | Get the menu for the day                | `/api/v1/menus`                     |
 | GET    | Get the menu for specific date          | `/api/v1/menus/:section?date=value` |
-| POST   | Add a single Order                      | `/api/v1/orders`                    |
+| POST   | Add a single Order to record.           | `/api/v1/orders`                    |
 | PUT    | Modify an order                         | `/api/v1/orders/:id`                |
 | GET    | Get all the orders                      | `/api/v1/orders`                    |
 
-SECTION : \[all | breakfast | lunch | dinner]
-date-format : 2-22-2019
+Section = all | breakfast | lunch | dinner
+Date format = m-dd-yyyy
 
-eg for all meals on 2-22-2019:  http://iya-pato.herokuapp.com/api/v1/menus/:all?date=2-22-2019
-eg for breakfast meals on 2-22-2019:  http://iya-pato.herokuapp.com/api/v1/menus/:breakfast?date=2-22-2019
-eg for lunch meals on 2-22-2019:  http://iya-pato.herokuapp.com/api/v1/menus/:lunch?date=2-22-2019
+Example:
+Get all menus for 2-22-2019
+iya-pato.herokuapp.com/api/v1/menus/all?date=2-22-2019
 
-## Tests
+Get breakfast menus for 2-22-2019
+iya-pato.herokuapp.com/api/v1/menus/breakfast?date=2-22-2019
+
 
 - Run test for all endpoints
   > run the command below
