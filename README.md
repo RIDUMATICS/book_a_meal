@@ -1,4 +1,5 @@
-# Book-A-Meal (IYA PATO) 🍽🥗🍔😋🍗 &middot; [![Build Status](https://travis-ci.com/RIDUMATICS/book_a_meal.svg?branch=develop)](https://travis-ci.com/RIDUMATICS/book_a_meal) [![Coverage Status](https://coveralls.io/repos/github/RIDUMATICS/book_a_meal/badge.svg?branch=develop)](https://coveralls.io/github/RIDUMATICS/book_a_meal?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/8a45c91f27cb5905b15a/maintainability)](https://codeclimate.com/github/RIDUMATICS/book_a_meal/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/8a45c91f27cb5905b15a/test_coverage)](https://codeclimate.com/github/RIDUMATICS/book_a_meal/test_coverage)
+# Book-A-Meal (IYA PATO) 🍽🥗🍔😋🍗
+[![Build Status](https://travis-ci.com/RIDUMATICS/book_a_meal.svg?branch=develop)](https://travis-ci.com/RIDUMATICS/book_a_meal) [![Coverage Status](https://coveralls.io/repos/github/RIDUMATICS/book_a_meal/badge.svg?branch=develop)](https://coveralls.io/github/RIDUMATICS/book_a_meal?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/8a45c91f27cb5905b15a/maintainability)](https://codeclimate.com/github/RIDUMATICS/book_a_meal/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/8a45c91f27cb5905b15a/test_coverage)](https://codeclimate.com/github/RIDUMATICS/book_a_meal/test_coverage)
 
 
 >Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat.
@@ -16,6 +17,14 @@ UI Template for the application can be found here [Github pages](https://ridumat
 ## Heroku App
 
 Application was deployed to Heroku. Use public URL [http://iya-pato.herokuapp.com/](http://iya-pato.herokuapp.com/) with API endpoints.
+
+---
+
+## Documentation
+
+[POSTMAN Documentation](https://documenter.getpostman.com/view/6765162/S11GTLzb)
+
+---
 
 ## Trello
 
@@ -85,11 +94,15 @@ Date format = m-dd-yyyy
 
 Example:
 Get all menus for 2-22-2019
-iya-pato.herokuapp.com/api/v1/menus/all?date=2-22-2019
+http://iya-pato.herokuapp.com/api/v1/menus/all?date=2-22-2019
 
 Get breakfast menus for 2-22-2019
-iya-pato.herokuapp.com/api/v1/menus/breakfast?date=2-22-2019
+https://iya-pato.herokuapp.com/api/v1/menus/breakfast?date=2-22-2019
 
+Get lunch menus for 2-22-2019
+https://iya-pato.herokuapp.com/api/v1/menus/lunch?date=2-22-2019
+
+check [Documentation](#documentation)
 
 - Run test for all endpoints
   > run the command below
