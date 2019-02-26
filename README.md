@@ -22,7 +22,7 @@ Application was deployed to Heroku. Use public URL [http://iya-pato.herokuapp.co
 
 ## Documentation
 
-[POSTMAN Documentation](https://documenter.getpostman.com/view/6765162/S11GTLzb)
+[POSTMAN Documentation](https://documenter.getpostman.com/view/6765162/S11HuJhd)
 
 ---
 
