@@ -1,4 +1,4 @@
-
+const add_meal = document.querySelector('#add_meal');
 
 document.querySelectorAll(".food").forEach((button) => {
   button.addEventListener('click', (e) => {
@@ -12,6 +12,7 @@ document.querySelectorAll(".food").forEach((button) => {
 document.querySelectorAll('.close').forEach((close) => {
   close.addEventListener('click', () => {
     notify.style.display = 'none';
+    add_meal.style.display = 'none';
   });
 });
 
