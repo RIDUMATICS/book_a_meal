@@ -39,7 +39,7 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <form method="POST" name="signup">
+                <form method="POST" name="catererSignup">
                     <input type="text" name="companyName" placeholder="Company Name" required />  
                     <input type="tel" name="phoneNumber" placeholder="Phone Number" required />  
                     <input type="email" name="email" placeholder="email" required/>
@@ -60,7 +60,7 @@
               <!-- Modal content -->
               <div class="modal-content">
                   <span class="close">&times;</span>
-                  <form action="" method="POST" name="login">
+                  <form action="" method="POST" name="catererLogin">
                       <input type="email" name="username" placeholder="email" required />
                       <input type="password" name="password" placeholder="password" required />
                       <button class="btn" type="submit">LOGIN </button>
@@ -71,6 +71,17 @@
             </div>
       </header>
   
-      <script src="./js/index.js"></script>
+      <script src="../js/index.js"></script>
+      <script>
+      document.querySelector('form[name=catererLogin').addEventListener('submit', (e) => {
+  e.preventDefault();
+  window.location.href = './meal.html';
+});
+
+document.querySelector('form[name=catererSignup]').addEventListener('submit', (e) => {
+  e.preventDefault();
+  window.location.href = './menu.html';
+});
+      </script>
 </body>
 </html>
