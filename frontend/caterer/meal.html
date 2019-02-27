@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Iya-Pato</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/user.styles.css" />
+  <style>
+    .food-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-gap: 1rem;
+    margin: 0 1rem;
+    /* margin-right: 0rem; */
+    overflow-y: scroll;
+    grid-column: 1 / -1;
+}
+
+/*tables*/
+table {
+  /* border-collapse: collapse; */
+  width: 100%;
+  grid-column: 1 / -1;
+
+}
+
+
+td {
+  border: 1px solid #dddddd32;
+  text-align: center;
+  width: auto;
+  background-color: white;
+  font-size: 14px;
+}
+th {
+  color: white;
+  border: none;
+  
+}
+
+td img {
+  width: 100px;
+  height: 70px;
+}
+
+td button {
+  padding: 0.6rem 2rem;
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  font-size: 13px;
+}
+
+button {
+  padding: 1rem 2.5rem;
+    font-size: 16px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+td .delete {
+  background-color: #ff3a3a;
+  margin-top: 10px;
+}
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <div class="left-menu">
+    <h2 class="logo"><a href="../index.html">IYA PATO</a></h2>
+    <ul class="vr-nav">
+      <li class="btn btn-white"><a href="./menu.html">Menu Options</a></li>
+      <li class="btn btn-white"><a href="./meal.html">Add Meals</a></li>
+      <li class="btn btn-white"><a href="./index.html">LogOut</a></li>
+    </ul>
+  </div>
+  <div class="vr-side">
+    <div class="inner">
+      <div class="right-content">
+        <div class="meal">
+          <button class="btn btn-orange" id="add_new"> + Add New</button>
+        </div>
+      </div>
+      <div class="food-content">
+        <table>
+          <tbody>
+            <tr>
+              <td><img src="../images/jollof.png"></td>
+              <td>Jollof Rice and Chicken</td>
+              <td>₦ 400</td>
+              <td>Large</td>
+              <td>
+                <button class="btn-orange">Edit</button><button class="delete btn btn-orange">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="../images/chickenndchips.jpg"></td>
+              <td>Chicken &amp; Chips</td>
+              <td>₦ 1500</td>
+              <td>Small</td>
+              <td>
+                <button class="btn-orange">Edit</button><button class="btn btn-orange">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="../images/spagetti.png"></td>
+              <td>Spaghetti &amp; Turkey</td>
+              <td>₦ 500</td>
+              <td>Large</td>
+              <td>
+                <button class="btn-orange">Edit</button><button class="btn btn-orange">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="../images/poridge.png"></td>
+              <td>Yam Poridge</td>
+              <td>₦ 500</td>
+              <td>Medium</td>
+              <td>
+                <button class="btn-orange">Edit</button><button class="btn btn-orange">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="add_meal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="close">&times;</div>
+      <form>
+        <input type="name" placeholder="Food Name" />
+        <select>
+          <option value="Large">Large</option>
+          <option value="Medium">Medium</option>
+          <option value="Small">Small</option>
+        </select>
+        <input type="number" placeholder="price" />
+        <button class="btn btn-orange">ADD MEAL</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/main.caterer.js"></script>
+  <script>
+    document.querySelector("#add_new").addEventListener('click', () => {
+      add_meal.style.display = "block"
+    });
+
+    document.querySelectorAll('.close').forEach((close) => {
+      close.addEventListener('click', () => {
+        add_meal.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+
+</html>
