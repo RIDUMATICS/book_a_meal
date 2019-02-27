@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Iya-Pato</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/user.styles.css" />
+  <style>
+    .food-add {
+      display: flex;
+      text-align: center;
+      border: dashed #e8500e 2px;
+      font-size: 3.5rem;
+      color: #e8500e;
+      flex-direction: column;
+      justify-content: center;
+
+    }
+
+    .food-add i {
+      cursor: pointer;
+    }
+
+    .ct-select-group {
+    height: 44px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.ct-select-group .ct-select {
+    width: 100%;
+    font-weight: 600;
+    font-size: 14px;
+    color: #4f4f4f;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid #dae5f7;
+    border-radius: 3px;
+    outline: none;
+}
+.ct-select-group:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    background-image: url(../images/arrow-drop-down.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.ct-select-group:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 44px;
+    width: calc(100% - 64px);
+    background: transparent;
+    z-index: 0;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="left-menu">
+    <h2 class="logo"><a href="../index.html">IYA PATO</a></h2>
+    <ul class="vr-nav">
+      <li class="btn btn-white"><a href="./menu.html">Menu Options</a></li>
+      <li class="btn btn-white"><a href="./orders.html">Add Meals</a></li>
+      <li class="btn btn-white"><a href="./index.html">LogOut</a></li>
+    </ul>
+  </div>
+  <div class="vr-side">
+      <div class="food-menu">
+        <section id="menu">
+          <h2>On Today's Menu</h2>
+          <p>Breakfast</p>
+          <div class="food-lists" id="breakfast">
+  
+            <div class="food-add">
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="food"><img src="../images/Spaghetti.jpg">
+              <div>
+                <h3>Spagetti</h3>
+                <p>₦ 150</p>
+                <div class="food-button-group">
+                  <button class="btn btn-white btn-remove">Remove</button>
+                </div>
+              </div>
+            </div>
+            <div class="food"><img src="../images/Spaghetti.jpg">
+              <div>
+                <h3>Spagetti</h3>
+                <p>₦ 150</p>
+                <div class="food-button-group">
+                  <button class="btn btn-white btn-remove">Remove</button>
+                </div>
+              </div>
+            </div>
+            <div class="food"><img src="../images/Spaghetti.jpg">
+              <div>
+                <h3>Spagetti</h3>
+                <p>₦ 150</p>
+                <div class="food-button-group">
+                  <button class="btn btn-white btn-remove">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>Lunch</p>
+          <div class="food-lists" id="lunch">
+  
+              <div class="food-add">
+                  <i class="fas fa-plus"></i>
+              </div>
+            <div class="food"><img src="../images/Spaghetti.jpg">
+              <div>
+                <h3>Spagetti</h3>
+                <p>₦ 150</p>
+                <div class="food-button-group">
+                  <button class="btn btn-white btn-remove">Remove</button>
+                </div>
+              </div>
+            </div>
+            <div class="food"><img src="../images/Spaghetti.jpg">
+              <div>
+                <h3>Spagetti</h3>
+                <p>₦ 150</p>
+                <div class="food-button-group">
+                  <button class="btn btn-white btn-remove">Remove</button>
+                </div>
+              </div>
+            </div>
+            <div class="food"><img src="../images/Spaghetti.jpg">
+              <div>
+                <h3>Spagetti</h3>
+                <p>₦ 150</p>
+                <div class="food-button-group">
+                  <button class="btn btn-white btn-remove">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>Super</p>
+          <div class="food-lists" id="super">
+  
+              <div class="food-add">
+                  <i class="fas fa-plus"></i>
+              </div>
+            <div class="food"><img src="../images/Spaghetti.jpg">
+              <div>
+                <h3>Spagetti</h3>
+                <p>₦ 150</p>
+                <div class="food-button-group">
+                  <button class="btn btn-white btn-remove">Remove</button>
+                </div>
+              </div>
+            </div>
+            <div class="food"><img src="../images/Spaghetti.jpg">
+              <div>
+                <h3>Spagetti</h3>
+                <p>₦ 150</p>
+                <div class="food-button-group">
+                  <button class="btn btn-white btn-remove">Remove</button>
+                </div>
+              </div>
+            </div>
+            <div class="food"><img src="../images/Spaghetti.jpg">
+              <div>
+                <h3>Spagetti</h3>
+                <p>₦ 150</p>
+                <div class="food-button-group">
+                  <button class="btn btn-white btn-remove">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="notify" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="close">&times;</div>
+            <label for="food-options" style="margin:10px 0;">Select food :</label>
+            <div class="ct-select-group ct-js-select-group">
+                <select class="ct-select ct-js-select">
+                    <option>Chicken &amp; Chips</option>
+                    <option>Jollof Rice and Chicken</option>
+                    <option>Spaghetti &amp; Turkey</option>
+                    <option>Yam Poridge</option>
+                  </select>
+            </div>
+            <button class="btn btn-orange btn-submit">ADD TO MENU</button>
+        </div>
+      </div>
+
+    <script src="../js/main.caterer.js"></script>
+</body>
+
+</html>
