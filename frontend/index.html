@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IYA PATO 🥗🍴</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="user"> 
+      <a href="./caterer/index.html">Caterer</a>
+    </div> 
+        
+      <header>
+        <div class="header-content">
+          <h1 class="logo"><a><span>IYA</span> PATO</a></h1>
+          <p>Order Delivery & Take-Out</p>
+          <div class="btn-box">
+            <div class="btn btn-white" id="sign-up">Sign Up</div>
+            <div class="btn btn-orange" id="log-in">Log In</div>
+    
+          </div>
+          <img class="steps" src="./images/steps.png" alt="Easy 3 steps choose location, Order food, and Delivery or Take-Out"/>
+        </div>
+        <div id="signup" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form method="POST" name="signup">
+                    <input type="text" name="username" placeholder="username" required />  
+                    <input type="email" name="email" placeholder="email" required/>
+                    <input type="password" name="password" placeholder="password" required />
+                    <button class="btn" type="submit"> CREATE ACCOUNT</button>
+                </form>
+            </div>
+          </div>
+          <div id="notify" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="msg"></p>
+            </div>
+          </div>
+          <div id="login" class="modal">
+    
+              <!-- Modal content -->
+              <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <form action="" method="POST" name="login">
+                      <input type="email" name="username" placeholder="email" required />
+                      <input type="password" name="password" placeholder="password" required />
+                      <button class="btn" type="submit">LOGIN </button>
+    
+                  </form>
+              </div>
+            
+            </div>
+      </header>
+      <section class="our-story">
+        <h1><img src="./images/heading_logo.png"/><br/> Our Story</h1>
+        <div class="story-content">
+          <p>Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. Morbi maximus lobortis ipsum, ut blandit augue ullamcorper vitae. Nulla dignissim leo felis, eget cursus elit aliquet ut. Curabitur vel convallis massa. Morbi tellus tortor, luctus et lacinia non, tincidunt in lacus. Vivamus sed ligula imperdiet, feugiat magna vitae, blandit ex. Vestibulum id dapibus dolor, ac cursus nulla.</p>
+          <p>Maecenas fermentum tortor id fringilla molestie. In hac habitasse platea dictumst. Morbi maximus lobortis ipsum, ut blandit augue ullamcorper vitae. Nulla dignissim leo felis, eget cursus elit aliquet ut. Curabitur vel convallis massa. Morbi tellus tortor, luctus et lacinia non, tincidunt in lacus. Vivamus sed ligula imperdiet, feugiat magna vitae, blandit ex. Vestibulum id dapibus dolor, ac cursus nulla.</p>
+        </div>
+      </section>
+        
+  <footer>
+      <p>Design with <i class="fas fa-heart"></i> Ridumatics <br> ALCWithForloop </p>
+    </footer>
+  
+  <script  src="./js/dummyData.js"></script>
+  <script src="./build/index.js"></script>
+  <script  src="./js/loadData.js"></script>
+</body>
+</html>
