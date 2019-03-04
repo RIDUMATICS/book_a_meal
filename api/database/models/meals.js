@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-  const meal = sequelize.define('meal', {
+  const Meals = sequelize.define('Meals', {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -7,8 +7,8 @@ export default (sequelize, DataTypes) => {
       primaryKey: true,
     },
     name: DataTypes.STRING,
-    price: DataTypes.INTEGER,
     size: DataTypes.STRING,
+    price: DataTypes.INTEGER,
   }, {
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
@@ -17,15 +17,8 @@ export default (sequelize, DataTypes) => {
     paranoid: true,
     underscored: true,
   });
-  meal.associate = (models) => {
-    meal.belongsTo(models.User, {
-      foreignKey: 'userId',
-      as: 'Caterer',
-    });
-    meal.hasMany(models.Order, {
-      foreignKey: 'mealId',
-      as: 'Orders',
-    });
+  Meals.associate = (models) => {
+    // associations can be defined here
   };
-  return meal;
+  return Meals;
 };
