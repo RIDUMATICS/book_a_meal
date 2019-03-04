@@ -14,11 +14,11 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      size: {
-        type: Sequelize.STRING
-      },
       price: {
         type: Sequelize.INTEGER
+      },
+      size: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

@@ -18,7 +18,10 @@ export default (sequelize, DataTypes) => {
     underscored: true,
   });
   Meals.associate = (models) => {
-    // associations can be defined here
+    Meals.belongsTo(models.Users, {
+      foreignKey: 'userId',
+      as: 'Caterer',
+    });
   };
   return Meals;
 };
