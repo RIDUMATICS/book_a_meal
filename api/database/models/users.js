@@ -1,6 +1,5 @@
 export default (sequelize, DataTypes) => {
   const Users = sequelize.define('Users', {
-    id: DataTypes.INTEGER,
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     email: {
@@ -19,10 +18,6 @@ export default (sequelize, DataTypes) => {
     underscored: true,
   });
   Users.associate = (models) => {
-    Users.hasMany(models.Meal, {
-      foreignKey: 'userId',
-      as: 'Meals',
-    });
   };
   return Users;
 };

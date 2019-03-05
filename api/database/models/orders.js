@@ -1,11 +1,5 @@
 export default (sequelize, DataTypes) => {
   const Orders = sequelize.define('Orders', {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      allowNull: false,
-      primaryKey: true,
-    },
     orderTime: DataTypes.DATE,
     deliveryTime: DataTypes.DATE,
     isCancelled: DataTypes.BOOLEAN,
