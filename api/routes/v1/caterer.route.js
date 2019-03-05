@@ -3,6 +3,7 @@ import CatererController from '../../controller/caterer.controller';
 
 const catererRoute = Router();
 
-catererRoute.post('/', CatererController.addCaterer);
+catererRoute.post('/signup', CatererController.addCaterer);
+catererRoute.post('/login', CatererController.loginCaterer);
 
 export default catererRoute;

@@ -6,6 +6,11 @@ const CatererController = {
       .then(resp => res.status(resp.code).json(resp))
       .catch(err => res.send(err));
   },
+  loginCaterer(req, res) {
+    catererService.loginCaterer(req.body)
+      .then(resp => res.status(resp.code).json(resp))
+      .catch(err => res.send(err));
+  },
 
 };
 
