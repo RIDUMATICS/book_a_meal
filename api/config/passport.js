@@ -8,7 +8,13 @@ opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = 'secret';
 
 export default (passport) => {
-  passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
-    console.log(jwt_payload);
+  passport.use(new JwtStrategy(opts, (jwtPayload, done) => {
+    Caterer.findById(jwtPayload.id)
+      .then((caterer) => {
+        if (caterer) {
+          return done(null, caterer);
+        }
+        return done(null, false);
+      }).catch(err => console.log(err));
   }));
 };
