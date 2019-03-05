@@ -18,49 +18,35 @@ const MealService = {
       .findAll()
       .then(meals => meals);
   },
-};
 
-const MealServic = {
-  fecthAllMeals() {
-    const validMeal = dummyData.meals.map((meal) => {
-      const newMeal = new Meal();
-      newMeal.id = meal.id;
-      newMeal.img = meal.img;
-      newMeal.name = meal.name;
-      newMeal.size = meal.size;
-      newMeal.price = meal.price;
-      return newMeal;
-    });
-    return validMeal;
-  },
-  getMeal(id) {
-    // eslint-disable-next-line eqeqeq
-    const meal = dummyData.meals.find(currentMeal => currentMeal.id == id);
-    return meal || { status: 'Not Found' };
-  },
-  // value is an Object
   updateMeal(id, value) {
-    // eslint-disable-next-line eqeqeq
-    const mealIndex = dummyData.meals.findIndex(currentMeal => currentMeal.id == id);
-    if (mealIndex >= 0) {
-      const initialMeal = dummyData.meals[mealIndex];
-      const newMeal = { ...initialMeal, ...value };
-      dummyData.meals[mealIndex] = newMeal;
-      return { status: 200, data: newMeal };
-    }
-    return { status: 204 };
+    return database
+      .Meals
+      .findById(id)
+      .then((meal) => {
+        if (!meal) {
+          return { status: 204 };
+        }
+        return meal
+          .update({
+            name: value.name || meal.name,
+            price: value.price || meal.price,
+            size: value.size || meal.size,
+          }).then(() => ({ status: 200, data: meal }));
+      });
   },
   dropMeal(id) {
-    // eslint-disable-next-line eqeqeq
-    const mealIndex = dummyData.meals.findIndex(currentMeal => currentMeal.id == id);
-    if (mealIndex >= 0) {
-      const delMeal = dummyData.meals[mealIndex];
-      // eslint-disable-next-line eqeqeq
-      const newMeals = dummyData.meals.filter(meal => meal.id != id);
-      dummyData.meals = newMeals;
-      return { status: 200, data: delMeal };
-    }
-    return { status: 204 };
+    return database
+      .Meals
+      .findById(id)
+      .then((meal) => {
+        if (!meal) {
+          return { status: 400 };
+        }
+        return meal
+          .destroy()
+          .then(() => ({ status: 200, message: 'deleted' }));
+      });
   },
 
 };

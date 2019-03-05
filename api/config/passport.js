@@ -1,4 +1,4 @@
-import { Strategy as JwtStrategy, ExtractJwt  } from 'passport-jwt';
+import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
 import database from '../database/models';
 
 const Caterer = database.Caterers;

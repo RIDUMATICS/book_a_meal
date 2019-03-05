@@ -92,7 +92,7 @@ class CatererService {
         return resp;
       }
     } catch (error) {
-      return {code:400, message: error.message };
+      return { code: 400, message: error.message };
     }
   }
 }

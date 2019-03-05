@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import MealService from '../services/meal.service';
 
 const MealController = {
@@ -21,12 +20,12 @@ const MealController = {
     const { id } = req.params;
     const value = req.body;
     const updatedMeal = MealService.updateMeal(id, value);
-    return res.status(updatedMeal.status).json(updatedMeal);
+    updatedMeal.then(resp => res.status(resp.status).json(resp));
   },
   dropMeal(req, res) {
     const { id } = req.params;
-    const newMeals = MealService.dropMeal(id);
-    return res.status(newMeals.status).json(newMeals);
+    const respond = MealService.dropMeal(id);
+    respond.then(resp => res.status(resp.status).json(resp));
   },
 };
 
