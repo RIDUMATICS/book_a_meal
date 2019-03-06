@@ -9,15 +9,22 @@ export default (sequelize, DataTypes) => {
     address: DataTypes.STRING,
     phoneNumber: DataTypes.STRING,
     password: DataTypes.STRING,
-  }, {
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
-    deletedAt: 'deletedAt',
-    timestamps: true,
-    paranoid: true,
-    underscored: true,
-  });
+    role: {
+      type: DataTypes.ENUM,
+      values: ['user', 'admin'],
+
+    },
+
+  }, {});
   Users.associate = (models) => {
+    Users.hasMany(models.Meals, {
+      foreignKey: 'userId',
+      as: 'meals',
+    });
+    Users.hasMany(models.Menus, {
+      foreignKey: 'userId',
+      as: 'menus',
+    });
   };
   return Users;
 };

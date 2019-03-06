@@ -5,7 +5,7 @@ import passport from 'passport';
 import mealRouter from './routes/v1/meal.route';
 import menuRouter from './routes/v1/menu.route';
 import orderRouter from './routes/v1/orders.route';
-import catererRoute from './routes/v1/caterer.route';
+import userRoute from './routes/v1/user.route';
 import passportConfig from './config/passport';
 
 
@@ -21,7 +21,7 @@ app.use(passport.initialize());
 
 passportConfig(passport);
 
-app.use('/auth/caterer', catererRoute);
+app.use('/auth', userRoute);
 app.use('/api/v1/meals', mealRouter);
 app.use('/api/v1/menus', menuRouter);
 app.use('/api/v1/orders', orderRouter);

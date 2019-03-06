@@ -3,41 +3,39 @@ import jwt from 'jsonwebtoken';
 import database from '../database/models';
 import checkPassword from '../utils/checkPassword';
 
-const Caterer = database.Caterers;
+const User = database.Users;
 
-class CatererService {
-  static async addCaterer(catererInput) {
-    return Caterer.count({
+class UserService {
+  static async addUser(UserInput) {
+    return User.count({
       where: {
-        email: catererInput.email,
+        email: UserInput.email,
       },
     }).then((count) => {
       if (count) {
         throw new Error('Email already exits');
       } else {
         const {
-          name,
-          displayName,
+          firstName,
+          lastName,
           email,
+          address,
           phoneNumber,
-          state,
-          city,
-          country,
-        } = catererInput;
+          role,
+        } = UserInput;
         let {
           password,
-        } = catererInput;
+        } = UserInput;
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(password, salt).then((hash) => {
             password = hash;
-            Caterer.create({
-              name,
-              displayName,
+            User.create({
+              firstName,
+              lastName,
               email,
+              address,
               phoneNumber,
-              state,
-              city,
-              country,
+              role,
               password,
             });
           });
@@ -47,13 +45,12 @@ class CatererService {
           status: 'Success',
           message: 'User created successfully',
           user: {
-            name,
-            displayName,
+            firstName,
+            lastName,
             email,
+            address,
             phoneNumber,
-            state,
-            city,
-            country,
+            role,
           },
         };
       }
@@ -63,22 +60,25 @@ class CatererService {
     }));
   }
 
-  static async loginCaterer(catererInput) {
+  static async loginUser(UserInput) {
     try {
-      const caterer = await Caterer.findOne({
+      const user = await User.findOne({
         where: {
-          email: catererInput.email,
+          email: UserInput.email,
         },
       });
-      if (!caterer) {
+      if (!user) {
         throw new Error('Email does not exits');
-      } else if (!checkPassword(catererInput.password, caterer.password)) {
+      } else if (!checkPassword(UserInput.password, user.password)) {
         throw new Error('invalid password');
       } else {
         const payload = {
-          id: caterer.id,
-          name: caterer.name,
-          displayName: caterer.displayName,
+          id: user.id,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          address: user.address,
+          phoneNumber: user.phoneNumber,
+          role: user.role,
         };
         const token = jwt.sign(payload, 'secret', {
           expiresIn: 3600,
@@ -97,4 +97,4 @@ class CatererService {
   }
 }
 
-export default CatererService;
+export default UserService;

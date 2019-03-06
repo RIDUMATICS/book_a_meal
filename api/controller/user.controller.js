@@ -1,13 +1,13 @@
-import catererService from '../services/caterer.service';
+import userService from '../services/user.service';
 
 const CatererController = {
-  addCaterer(req, res) {
-    catererService.addCaterer(req.body)
+  addUser(req, res) {
+    userService.addUser(req.body)
       .then(resp => res.status(resp.code).json(resp))
       .catch(err => res.send(err));
   },
-  loginCaterer(req, res) {
-    catererService.loginCaterer(req.body)
+  loginUser(req, res) {
+    userService.loginUser(req.body)
       .then(resp => res.status(resp.code).json(resp))
       .catch(err => res.send(err));
   },

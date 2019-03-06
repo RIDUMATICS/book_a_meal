@@ -7,8 +7,9 @@ const MealService = {
       name: mealInput.name,
       price: mealInput.price,
       size: mealInput.size,
+      userId: mealInput.userId,
     }).then(meal => ({
-      id: meal.id, name: meal.name, price: meal.price, size: meal.size,
+      id: meal.id, name: meal.name, price: meal.price, size: meal.size, userId: mealInput.userId,
     }));
   },
 
