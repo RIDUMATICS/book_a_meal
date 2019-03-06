@@ -1,63 +1,53 @@
-/* eslint-disable no-console */
-import dummyData from '../utils/dummyData';
-import Meal from '../models/meal.model';
+import database from '../database/models';
+
 
 const MealService = {
+  addMeal(mealInput) {
+    return database.Meals.create({
+      name: mealInput.name,
+      price: mealInput.price,
+      size: mealInput.size,
+      userId: mealInput.userId,
+    }).then(meal => ({
+      id: meal.id, name: meal.name, price: meal.price, size: meal.size, userId: mealInput.userId,
+    }));
+  },
+
   fecthAllMeals() {
-    const validMeal = dummyData.meals.map((meal) => {
-      const newMeal = new Meal();
-      newMeal.id = meal.id;
-      newMeal.img = meal.img;
-      newMeal.name = meal.name;
-      newMeal.size = meal.size;
-      newMeal.price = meal.price;
-      return newMeal;
-    });
-    return validMeal;
+    return database
+      .Meals
+      .findAll()
+      .then(meals => meals);
   },
-  addMeal(meal) {
-    const mealLength = dummyData.meals.length;
-    const lastId = dummyData.meals[mealLength - 1].id;
-    const newId = lastId + 1;
-    // eslint-disable-next-line no-param-reassign
-    meal.id = newId;
-    const newMeal = new Meal();
-    newMeal.id = meal.id;
-    newMeal.img = meal.img;
-    newMeal.name = meal.name;
-    newMeal.size = meal.size;
-    newMeal.price = meal.price;
-    dummyData.meals.push(newMeal);
-    return newMeal;
-  },
-  getMeal(id) {
-    // eslint-disable-next-line eqeqeq
-    const meal = dummyData.meals.find(currentMeal => currentMeal.id == id);
-    return meal || { status: 'Not Found' };
-  },
-  // value is an Object
+
   updateMeal(id, value) {
-    // eslint-disable-next-line eqeqeq
-    const mealIndex = dummyData.meals.findIndex(currentMeal => currentMeal.id == id);
-    if (mealIndex >= 0) {
-      const initialMeal = dummyData.meals[mealIndex];
-      const newMeal = { ...initialMeal, ...value };
-      dummyData.meals[mealIndex] = newMeal;
-      return { status: 200, data: newMeal };
-    }
-    return { status: 204 };
+    return database
+      .Meals
+      .findById(id)
+      .then((meal) => {
+        if (!meal) {
+          return { status: 204 };
+        }
+        return meal
+          .update({
+            name: value.name || meal.name,
+            price: value.price || meal.price,
+            size: value.size || meal.size,
+          }).then(() => ({ status: 200, data: meal }));
+      });
   },
   dropMeal(id) {
-    // eslint-disable-next-line eqeqeq
-    const mealIndex = dummyData.meals.findIndex(currentMeal => currentMeal.id == id);
-    if (mealIndex >= 0) {
-      const delMeal = dummyData.meals[mealIndex];
-      // eslint-disable-next-line eqeqeq
-      const newMeals = dummyData.meals.filter(meal => meal.id != id);
-      dummyData.meals = newMeals;
-      return { status: 200, data: delMeal };
-    }
-    return { status: 204 };
+    return database
+      .Meals
+      .findById(id)
+      .then((meal) => {
+        if (!meal) {
+          return { status: 400 };
+        }
+        return meal
+          .destroy()
+          .then(() => ({ status: 200, message: 'deleted' }));
+      });
   },
 
 };

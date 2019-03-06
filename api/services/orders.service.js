@@ -1,47 +1,50 @@
-import dummyData from '../utils/dummyData';
-import Orders from '../models/orders.model';
+import database from '../database/models';
 
+const dateObj = new Date();
+const date = `${dateObj.getFullYear()}-${(dateObj.getMonth() + 1).toString().padStart(2, 0)}-${(dateObj.getDate()).toString().padStart(2, 0)}`;
 
 const OrderService = {
   fetchOrders() {
-    const validOrders = dummyData.orders.map((order) => {
-      const newOrder = new Orders();
-      newOrder.id = order.id;
-      newOrder.userId = order.userId;
-      newOrder.menuId = order.menuId;
-      newOrder.status = order.status;
-      newOrder.quantity = order.quantity;
-      newOrder.price = order.price;
-      return newOrder;
-    });
-    return validOrders;
+    return database
+      .Orders
+      .findAll()
+      .then(orders => orders);
   },
   updateOrder(id, value) {
-    // eslint-disable-next-line eqeqeq
-    const orderIndex = dummyData.orders.findIndex(currentOrder => currentOrder.id == id);
-    if (orderIndex >= 0) {
-      const initialOrder = dummyData.orders[orderIndex];
-      const newOrder = { ...initialOrder, ...value };
-      dummyData.orders[orderIndex] = newOrder;
-      return { status: 200, data: newOrder };
-    }
-    return { status: 204 };
+    return database
+      .Orders
+      .findById(id)
+      .then((order) => {
+        if (!order) {
+          return { status: 204 };
+        }
+        return order
+          .update({
+            userId: value.userId || order.userId,
+            status: value.status || order.status,
+            menuId: value.menuId || order.menuId,
+            quantity: value.quantity || order.quantity,
+            price: value.price || order.price,
+            orderTime: value.orderTime || order.orderTime,
+            delivery: value.delivery || order.delivery,
+          }).then(() => ({ status: 200, data: order }));
+      });
   },
-  addOrder(order) {
-    const orderLength = dummyData.orders.length;
-    const lastId = dummyData.orders[orderLength - 1].id;
-    const newId = lastId + 1;
-    // eslint-disable-next-line no-param-reassign
-    order.id = newId;
-    const newOrder = new Orders();
-    newOrder.id = order.id;
-    newOrder.userId = order.userId;
-    newOrder.menuId = order.menuId;
-    newOrder.status = order.status;
-    newOrder.quantity = order.quantity;
-    newOrder.price = order.price;
-    dummyData.orders.push(newOrder);
-    return newOrder;
+  addOrder(orderInput) {
+    return database.Orders.create({
+      userId: orderInput.userId,
+      status: orderInput.status,
+      menuId: orderInput.menuId,
+      quantity: orderInput.quantity,
+      price: orderInput.price,
+    }).then(order => ({
+      id: order.id,
+      userId: orderInput.userId,
+      status: orderInput.status,
+      menuId: orderInput.menuId,
+      quantity: orderInput.quantity,
+      price: orderInput.price,
+    }));
   },
 
 };

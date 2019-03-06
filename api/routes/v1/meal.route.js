@@ -1,11 +1,11 @@
 import { Router } from 'express';
+import passport from 'passport';
 import MealController from '../../controller/meal.controller';
 
 const mealRouter = Router();
 
-mealRouter.get('/', MealController.fetchAllMeals);
-mealRouter.post('/', MealController.addMeal);
-mealRouter.get('/:id', MealController.getSingleMeal);
-mealRouter.put('/:id', MealController.updateMeal);
-mealRouter.delete('/:id', MealController.dropMeal);
+mealRouter.get('/', passport.authenticate('jwt', { session: false }), MealController.fetchAllMeals);
+mealRouter.post('/', passport.authenticate('jwt', { session: false }), MealController.addMeal);
+mealRouter.put('/:id', passport.authenticate('jwt', { session: false }), MealController.updateMeal);
+mealRouter.delete('/:id', passport.authenticate('jwt', { session: false }), MealController.dropMeal);
 export default mealRouter;
