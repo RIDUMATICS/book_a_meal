@@ -1,18 +1,25 @@
 export default (sequelize, DataTypes) => {
   const Orders = sequelize.define('Orders', {
+    userId: DataTypes.INTEGER,
+    status: {
+      type: DataTypes.ENUM,
+      values: ['pending', 'cancelled', 'delivered'],
+    },
+    menuId: DataTypes.INTEGER,
+    quantity: DataTypes.INTEGER,
+    price: DataTypes.INTEGER,
     orderTime: DataTypes.DATE,
     deliveryTime: DataTypes.DATE,
-    isCancelled: DataTypes.BOOLEAN,
-    isDelivered: DataTypes.BOOLEAN,
-  }, {
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
-    deletedAt: 'deletedAt',
-    timestamps: true,
-    paranoid: true,
-    underscored: true,
-  });
+  }, {});
   Orders.associate = (models) => {
+    Orders.belongsTo(models.Users, {
+      foreignKey: 'userId',
+      as: 'User',
+    });
+    Orders.belongsTo(models.Menus, {
+      foreignKey: 'menuId',
+      as: 'Menu',
+    });
   };
   return Orders;
 };

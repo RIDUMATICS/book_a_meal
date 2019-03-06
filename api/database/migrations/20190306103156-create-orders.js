@@ -8,17 +8,27 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      userId: {
+        type: Sequelize.INTEGER
+      },
+      status: {
+        type: Sequelize.ENUM,
+        values: ['pending', 'cancelled', 'delivered']
+      },
+      menuId: {
+        type: Sequelize.INTEGER
+      },
+      quantity: {
+        type: Sequelize.INTEGER
+      },
+      price: {
+        type: Sequelize.INTEGER
+      },
       orderTime: {
         type: Sequelize.DATE
       },
       deliveryTime: {
         type: Sequelize.DATE
-      },
-      isCancelled: {
-        type: Sequelize.BOOLEAN
-      },
-      isDelivered: {
-        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
