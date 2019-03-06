@@ -1,52 +1,32 @@
-import dummyData from '../utils/dummyData';
-import Menu from '../models/menu.model';
+import database from '../database/models';
+
 
 const MenuService = {
+  addMenu(menuInput) {
+    return database.Menus.create({
+      mealId: menuInput.mealId,
+      section: menuInput.section,
+      userId: menuInput.userId,
+    }).then(menu => ({
+      id: menu.id, section: menuInput.section, mealId: menuInput.mealId, userId: menuInput.userId,
+    }));
+  },
+
   fetchMenu() {
-    const validMenus = dummyData.menus.map((menu) => {
-      const newMenu = new Menu();
-      newMenu.id = menu.id;
-      newMenu.mealId = menu.mealId;
-      newMenu.date = menu.date;
-      newMenu.section = menu.section;
-      return newMenu;
-    });
-    return validMenus;
+    return database
+      .Menus
+      .findAll()
+      .then(menus => menus);
   },
-  fetchSingleMenu(section, date) {
-    switch (section) {
-      case 'all': {
-        const validMenus = dummyData.menus.filter(menu => menu.date === date);
-        return validMenus.map((menu) => {
-          const newMenu = new Menu();
-          newMenu.id = menu.id;
-          newMenu.mealId = menu.mealId;
-          newMenu.date = menu.date;
-          newMenu.section = menu.section;
-          return newMenu;
-        });
-      }
-      case 'breakfast':
-      case 'lunch':
-      case 'dinner': {
-        const validMenus = dummyData.menus
-          .filter(menu => menu.date === date)
-          .filter(menu => menu.section === section);
-        return validMenus;
-      }
-      default:
-        return null;
-    }
-  },
-  addMenu(menu) {
-    const nextId = dummyData.menus.length + 1;
-    const newMenu = new Menu();
-    newMenu.id = nextId;
-    newMenu.mealId = menu.mealId;
-    newMenu.date = menu.date;
-    newMenu.section = menu.section;
-    dummyData.menus.push(newMenu);
-    return newMenu;
+
+  fetchSingleMenu(adminId) {
+    return database
+      .Menus
+      .findAll({
+        where: {
+          userId: adminId,
+        },
+      }).then(menus => menus);
   },
 
 };
