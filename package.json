@@ -7,18 +7,19 @@
   "repository": "https://github.com/RIDUMATICS/book_a_meal-ALCwithForloop-",
   "author": "Ridwan Onikoyi",
   "scripts": {
-    "dev": "nodemon --exec babel-node index.js",
-    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register test/*.js",
+    "dev": "nodemon --exec babel-node ./api/index.js",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register ./api/test/*.js",
     "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
     "coveralls-coverage": "coveralls < lcov.info",
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
     "coverage": "nyc yarn test && yarn run generate-lcov && yarn run coveralls-coverage && yarn run codeclimate-coverage",
-    "build-babel": "babel ./ --out-dir build/ --ignore ./node_modules,./coverage,./.nyc_output,./.babelrc,./package.json,./yarn-error.log,../.travis.yml,./.eslintrc.js,../frontend,../README.md,../yarn-error.log",
+    "build-babel": "babel ./api --out-dir ./build/ --ignore ./api/coverage,./api/.nyc_output,./api/.babelrc,./api/yarn-error.log,./api/.eslintrc.js",
     "clean": "rm -rf build && mkdir build",
-    "build": "npm run clean && npm run build-babel",
-    "start": "node build/index.js"
+    "build": "npm run clean && npm run build-babel && cp ./api/config/config.json ./build/config",
+    "start": "node ./build/index.js"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
     "bcrypt": "^3.0.4",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
