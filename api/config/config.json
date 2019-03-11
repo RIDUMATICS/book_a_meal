@@ -7,11 +7,12 @@
     "dialect": "postgres"
   },
   "test": {
-    "username": "root",
+    "username": "ridwan",
     "password": null,
-    "database": "database_test",
+    "database": "mealbooking_test",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "port": 5432
   },
   "production": {
     "use_env_variable": "DATABASE_URL"

@@ -1,15 +1,21 @@
 language: node_js
 node_js:
   - "stable"
+services:
+  - postgresql
 env:
   global:
   - CODECLIMATE_REPO_TOKEN=dc0ee1e022fd0bcc97f9500849e45a41d5034af63ccabb5ee3120e1e767c720a
 cache:
   directories:
     - "node_modules"
-before_install: cd ./api
 install:
   - yarn install
+before_script:
+  - psql -c 'create database mealbooking_test;' -U postgres
+  - psql -c "CREATE USER ridwan WITH PASSWORD null;" -U postgre
+  - npm install -g sequelize-cli
+  - sequelize db:migrate
 script:
   - yarn run test
 after_success: 
