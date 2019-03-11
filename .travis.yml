@@ -17,6 +17,7 @@ before_script:
   - psql -c "CREATE USER ridwan WITH PASSWORD null;" -U postgres
   - yarn global add sequelize-cli
   - sequelize db:migrate
+  - sequelize db:seed:all
 script:
   - yarn run test
 after_success: 
