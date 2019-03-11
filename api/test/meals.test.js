@@ -54,15 +54,6 @@ describe('Meals', () => {
           res.body.status.should.be.a('string');
           res.body.status.should.equal('success');
           res.body.data.should.be.a('array');
-          res.body.data[0].should.be.a('object');
-          res.body.data[0].should.have.property('id');
-          res.body.data[0].should.have.property('name');
-          res.body.data[0].should.have.property('size');
-          res.body.data[0].should.have.property('price');
-          res.body.data[0].id.should.be.a('number');
-          res.body.data[0].name.should.be.a('string');
-          res.body.data[0].size.should.be.a('string');
-          res.body.data[0].price.should.be.a('number');
           done();
         });
     });
