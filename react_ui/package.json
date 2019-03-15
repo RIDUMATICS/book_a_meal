@@ -1,0 +1,28 @@
+{
+  "name": "book_a_meal_ui",
+  "version": "1.0.0",
+  "description": "Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat.",
+  "main": "index.js",
+  "repository": "https://github.com/RIDUMATICS/book_a_meal",
+  "author": "Ridwan Onikoyi",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev-server": "webpack-dev-server --mode development"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-do-expressions": "^7.2.0",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  }
+}
