@@ -15,6 +15,25 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.(css|scss)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 5000
+            }
+          }
+        ]
+      }
     ],
   },
   devtool: 'cheap-module-eval-source-map',
